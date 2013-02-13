@@ -13,4 +13,31 @@
         <servlet-name>tasks</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+   
+    <resource-ref>
+        <description>My DataSource Reference</description>
+        <res-ref-name>jdbc/dataSource</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
+    <servlet>
+        <servlet-name>ServletAdaptor</servlet-name>
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>com.wyndhamjade.interview.test.service</param-value>
+        </init-param>
+        <init-param>
+            <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>ServletAdaptor</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

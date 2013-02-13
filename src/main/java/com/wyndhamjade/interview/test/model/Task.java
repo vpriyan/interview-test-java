@@ -2,7 +2,9 @@ package com.wyndhamjade.interview.test.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public final class Task implements Serializable {
     private Long id;
     private String description;
